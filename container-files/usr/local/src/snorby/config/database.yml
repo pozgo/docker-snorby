@@ -1,4 +1,3 @@
-
 # Snorby Database Configuration
 #
 # Please set your database password/user below
@@ -6,9 +5,9 @@
 #
 snorby: &snorby
   adapter: mysql
-  username: snorbyuser
-  password: "password" # Example: password: "s3cr3tsauce"
-  host: 127.0.0.1
+  username: $DB_USER
+  password: "$DB_PASS"
+  host: $DB_ADDRESS
 
 development:
   database: snorby
