@@ -12,13 +12,14 @@ To be able to connect to database we would need one to be running first. Easiest
 **For more information about million12/MariaDB see our [documentation.](https://github.com/million12/docker-mariadb) **
 
 Example:  
-`docker run \`  
-`-d \`  
-`--name snorby-db \`  
-`-p 3306:3306 \`  
-`--env="MARIADB_USER=snorbyuser" \`  
-`--env="MARIADB_PASS=my_password" \`  
-`million12/mariadb`  
+
+    docker run \
+    -d \
+    --name snorby-db \
+    -p 3306:3306 \
+    --env="MARIADB_USER=snorbyuser" \
+    --env="MARIADB_PASS=my_password" \
+    million12/mariadb
 
 ### Environmental Variable
 In this Image you can use environmental variables to connect into external MySQL/MariDB database.  
@@ -33,28 +34,31 @@ If you mount your config to different location, simply edit it.
 
 ## Usage
 ### Basic
-`docker run \`  
-`-d \`  
-`--name snorby \`  
-`-p 3000:3000 \`  
-`--env="DB_ADDRESS=database_ip" \`  
-`--env="DB_USER=snorbyuser" \`  
-`--env="DB_PASS=password" \`  
-`polinux/snorby`
+
+    docker run \
+    -d \
+    --name snorby \
+    -p 3000:3000 \
+    --env="DB_ADDRESS=database_ip" \
+    --env="DB_USER=snorbyuser" \
+    --env="DB_PASS=password" \
+    polinux/snorby
+
 
 ### Mount custom config , override some options
-`docker run \`  
-`-d \`  
-`--name snorby \`  
-`-p 80:80 \`  
-`--env="DB_ADDRESS=database_ip" \`  
-`--env="DB_USER=snorbyuser" \`  
-`--env="DB_PASS=password" \`  
-`--env="OINKCODE=my_oinkcode" \`  
-`-v /my-snorby-config.yml:/usr/local/src/snorby/config/snorby_config.yml \`  
-`-v /my-email-settings.rb:/usr/local/src/snorby/config/initializers/mail_config.rb \`  
-`polinux/snorby \`  
-`-e development -p 80`  
+
+    docker run \
+    -d \
+    --name snorby \
+    -p 80:80 \
+    --env="DB_ADDRESS=database_ip" \
+    --env="DB_USER=snorbyuser" \
+    --env="DB_PASS=password" \
+    --env="OINKCODE=my_oinkcode" \
+    -v /my-snorby-config.yml:/usr/local/src/snorby/config/snorby_config.yml \
+    -v /my-email-settings.rb:/usr/local/src/snorby/config/initializers/mail_config.rb \
+    polinux/snorby \
+    -e development -p 80
 
 ### Rails Server CMD params
 `rails server` command can be used with some parameters to define address and port on which rails server should work.  
