@@ -2,7 +2,11 @@
 [Docker Image](https://registry.hub.docker.com/u/polinux/snorby/) with Snorby using CentOS-7, Ruby on Rails, Daq and Snort.
 Using ENV variable called `OINKCODE` this docker image can download rules provided for **registered** and **subscribed** users from [snort.org](https://www.snort.org).  
 
-Snorby is build on `ruby-1.9.3-p551`, `daq-2.0.4` and `snort-2.9.7.0` using `community` rules.  
+Snorby is build on:  
+    
+    ruby-1.9.3-p551
+    daq-2.0.4
+    snort-2.9.7.0 using community rules.  
 
 This container is built that any extra parameters provided to `docker run` will be passed directly to rails server command. For example, if you run `docker run [run options] polinux/snorby -e production` you pass `-e production` to rails server daemon.
 
