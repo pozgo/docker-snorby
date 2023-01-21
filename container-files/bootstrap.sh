@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export PATH=$PATH:/usr/local/rvm/rubies/ruby-1.9.3-p551/bin
 
